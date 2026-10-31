@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support – TrackPrint</title>
+<meta name="description" content="Help with TrackPrint, the album poster app: answers to common questions, the contact email, and a form to report a bug or request a feature.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="narrow">
+<nav class="back"><a href="./">← TrackPrint</a></nav>
+<h1>Support</h1>
+<p class="lede-left">Answers to the questions people ask most, and a form to report a bug or ask for a feature. You can also write to <a href="mailto:mateoas@icloud.com">mateoas@icloud.com</a>.</p>
+
+<h2 id="questions">Questions</h2>
+<div class="faq">
+<details>
+<summary>Where do the albums come from?</summary>
+<p>From Apple Music or from MusicBrainz, the open music encyclopedia, with covers from the Cover Art Archive. Choose the source in Settings (on the Mac, TrackPrint ▸ Settings). Apple Music asks for your permission the first time; MusicBrainz needs no account.</p>
+</details>
+<details>
+<summary>TrackPrint can’t find an album, or says MusicBrainz is busy.</summary>
+<p>Try a shorter search with the album’s title and the artist, or switch the source in Settings. MusicBrainz is a free, community-run service and sometimes answers slowly; TrackPrint keeps trying for a few seconds, and trying again a moment later usually works.</p>
+</details>
+<details>
+<summary>Apple Music search doesn’t work.</summary>
+<p>TrackPrint needs permission to use Apple Music. On iPhone and iPad, allow it in Settings ▸ Apps ▸ TrackPrint. On the Mac, allow it in System Settings ▸ Privacy &amp; Security ▸ Media &amp; Apple Music. Or switch to MusicBrainz in TrackPrint’s Settings.</p>
+</details>
+<details>
+<summary>How big can I print a poster?</summary>
+<p>Print is 15 × 20 cm and Poster 20 × 30 cm, both at 300 ppi, the resolution print shops ask for. Post and Story are sized for social media. Export as PDF or PNG for the sharpest print, and check a test print first: colours on paper never quite match a screen.</p>
+</details>
+<details>
+<summary>How do my posters get to my other devices?</summary>
+<p>Through your own iCloud account. Sign in with the same Apple Account on each device and leave iCloud Sync on in TrackPrint’s Settings. Turned off, your posters stay on the device you made them on. We never see your posters.</p>
+</details>
+<details>
+<summary>Can I sell the posters I make?</summary>
+<p>TrackPrint is for posters for your own wall. Album covers, titles and names belong to their artists and labels, so publishing or selling a poster needs their permission. See section 4 of the <a href="https://trackprint-music-posters.github.io/trackprint-legal-docs/nutzungsbedingungen.en.html#t4">terms of use</a>.</p>
+</details>
+<details>
+<summary>What does TrackPrint collect about me?</summary>
+<p>Nothing for analytics, ads or tracking, and there is no account. Searches go straight to Apple Music or MusicBrainz, and your posters stay on your devices and in your iCloud. The <a href="https://trackprint-music-posters.github.io/trackprint-legal-docs/datenschutzerklaerung.en.html">privacy policy</a> has the details.</p>
+</details>
+</div>
+
+<h2 id="send-feedback">Send Feedback</h2>
+<p class="lede-left">Found a bug or missing something? Tell us here; no account needed. The app has the same form in Settings ▸ Send Feedback.</p>
+
+<form id="feedback" novalidate>
+<fieldset class="segmented">
+<legend>Kind</legend>
+<label><input type="radio" name="type" value="bug" checked> Bug report</label>
+<label><input type="radio" name="type" value="feature"> Feature request</label>
+</fieldset>
+
+<label for="title">Title</label>
+<input id="title" name="title" type="text" maxlength="200" autocomplete="off" required>
+
+<label for="body">Description</label>
+<textarea id="body" name="body" rows="8" required></textarea>
+<p class="hint">Your report goes to TrackPrint’s private issue tracker. Leave out anything personal you don’t want us to read; to hear back, write to us by email instead.</p>
+
+<!-- Left empty by people; bots that fill every field are dropped. -->
+<div class="trap" aria-hidden="true">
+<label for="website">Website</label>
+<input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+</div>
+
+<p id="status" role="status" aria-live="polite"></p>
+<button type="submit">Send</button>
+</form>
+</main>
+
+<footer>
+<p>© 2026 TrackPrint</p>
+<p>
+<a href="https://trackprint-music-posters.github.io/trackprint-legal-docs/impressum.en.html">Legal Notice</a>
+<a href="https://trackprint-music-posters.github.io/trackprint-legal-docs/datenschutzerklaerung.en.html">Privacy Policy</a>
+<a href="https://trackprint-music-posters.github.io/trackprint-legal-docs/nutzungsbedingungen.en.html">Terms of Use</a>
+</p>
+</footer>
+
+<script>
+// Posts to the same endpoint and contract as the app's FeedbackClient
+// (TrackPrint-Music-Posters/trackprint-feedback): { type, title, body, version }.
+// The function writes `version` into the issue footer as `_TrackPrint v<version>_`.
+const ENDPOINT = 'https://trackprint-feedback.vercel.app/api/feedback';
+const WEB_VERSION = '? via website';
+
+const form = document.getElementById('feedback');
+const status = document.getElementById('status');
+const button = form.querySelector('button');
+
+function show(message, kind) {
+    status.textContent = message;
+    status.className = kind || '';
+}
+
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const title = form.title.value.trim();
+    const body = form.body.value.trim();
+    if (!title || !body) {
+        show('Title and description are required.', 'error');
+        return;
+    }
+    if (form.website.value) {
+        form.reset();
+        show('Thank you! Your feedback was sent.', 'ok');
+        return;
+    }
+
+    button.disabled = true;
+    show('Sending…');
+    let response;
+    try {
+        response = await fetch(ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ type: form.type.value, title, body, version: WEB_VERSION }),
+        });
+    } catch {
+        button.disabled = false;
+        show('Couldn’t reach the feedback service. Check your connection and try again.', 'error');
+        return;
+    }
+    const result = await response.json().catch(() => null);
+    button.disabled = false;
+    if (response.ok && result && result.ok === true) {
+        form.reset();
+        show('Thank you! Your feedback was sent.', 'ok');
+    } else {
+        show('Could not send feedback. Please try again.', 'error');
+    }
+});
+</script>
+</body>
+</html>

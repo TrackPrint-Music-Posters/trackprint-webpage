@@ -648,3 +648,180 @@ footer a {
 footer a:hover {
     color: var(--text);
 }
+
+/* Support page */
+
+main.narrow {
+    max-width: 38rem;
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
+}
+
+nav.back {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+main.narrow h1 {
+    font-size: 2.2rem;
+    margin: 0 0 0.5rem;
+}
+
+main.narrow h2 {
+    font-size: 1.5rem;
+    margin: 3rem 0 1rem;
+}
+
+.lede-left {
+    color: var(--muted);
+    margin: 0 0 1.5rem;
+}
+
+.faq details {
+    border-bottom: 1px solid var(--rule);
+}
+
+.faq details:first-child {
+    border-top: 1px solid var(--rule);
+}
+
+.faq summary {
+    cursor: pointer;
+    padding: 0.9rem 1.75rem 0.9rem 0;
+    font-weight: 600;
+    list-style: none;
+    position: relative;
+}
+
+.faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq summary::after {
+    content: "+";
+    position: absolute;
+    right: 0.25rem;
+    top: 0.8rem;
+    color: var(--muted);
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.faq details[open] summary::after {
+    content: "−";
+}
+
+.faq details p {
+    margin: 0 0 1.1rem;
+    color: var(--muted);
+}
+
+form label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 1.25rem 0 0.4rem;
+}
+
+form input[type="text"],
+form textarea {
+    display: block;
+    width: 100%;
+    font: inherit;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 0.6rem 0.75rem;
+}
+
+form input[type="text"]:focus,
+form textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: -1px;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+.hint {
+    margin: 0.5rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.segmented {
+    display: inline-flex;
+    border: 0;
+    padding: 3px;
+    margin: 0;
+    background: var(--surface);
+    border-radius: 10px;
+}
+
+.segmented legend {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.segmented label {
+    margin: 0;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.segmented input {
+    position: absolute;
+    opacity: 0;
+}
+
+.segmented label:has(input:checked) {
+    background: var(--card);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.15);
+}
+
+.segmented label:has(input:focus-visible) {
+    outline: 2px solid var(--accent);
+}
+
+.trap {
+    position: absolute;
+    left: -10000px;
+}
+
+#status {
+    min-height: 1.5rem;
+    margin: 1.25rem 0 0.75rem;
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+#status.error {
+    color: var(--red);
+}
+
+#status.ok {
+    color: var(--green);
+}
+
+form button {
+    font: inherit;
+    font-weight: 600;
+    color: var(--accent-text);
+    background: var(--accent);
+    border: 0;
+    border-radius: 999px;
+    padding: 0.6rem 1.75rem;
+    cursor: pointer;
+}
+
+form button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
