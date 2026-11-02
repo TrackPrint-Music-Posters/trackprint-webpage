@@ -28,7 +28,11 @@ address answering until the builds that use it are gone.
   side A of a record, its sections the tracks A1 Welcome, A2 Find, A3 Styles,
   A4 Adjust and A5 Print, each number in its feature's colour: dark is the
   record, light its sleeve, and the record stays black in both. The support
-  page is the liner notes, one paper sheet in both themes. The headlines, their
+  page is the liner notes, one paper sheet in both themes. Each track is
+  centred: its number, headline and line over its content. A3 Styles is a
+  reel: the stage holds still under the top bar while you scroll, and each
+  poster morphs into the next as its description comes in. With reduced
+  motion, or without JavaScript, it is a grid of all eight. The headlines, their
   lines and the features' colours are the app's welcome pages'
   (`TrackPrint/Welcome/WelcomePages.swift`): change one, change both.
 - `fonts/` holds Barlow Condensed (headlines) and JetBrains Mono (numbers and
