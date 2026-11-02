@@ -24,6 +24,17 @@ address answering until the builds that use it are gone.
 
 - `index.html` is the landing page, `style.css` the styles of both pages. Open
   a page in a browser to preview it; there is nothing to install.
+- The look follows the app's welcome tour, "Side A". The landing page reads as
+  side A of a record, its sections the tracks A1 Welcome, A2 Find, A3 Styles,
+  A4 Adjust and A5 Print, each number in its feature's colour: dark is the
+  record, light its sleeve, and the record stays black in both. The support
+  page is the liner notes, one paper sheet in both themes. The headlines, their
+  lines and the features' colours are the app's welcome pages'
+  (`TrackPrint/Welcome/WelcomePages.swift`): change one, change both.
+- `fonts/` holds Barlow Condensed (headlines) and JetBrains Mono (numbers and
+  labels), Latin subsets as WOFF2 under the SIL Open Font License
+  (`fonts/OFL.txt`). They are served from this site, so no font service sees a
+  visitor; never link a font CDN instead.
 - `support.html` holds the questions people ask most, the contact email, a
   section for rights holders and the feedback form. The form posts to the
   same endpoint and contract as the app's Settings ▸ Send Feedback,
@@ -46,6 +57,8 @@ address answering until the builds that use it are gone.
   package with a small executable target that paints each cover with Core
   Graphics, builds the poster and calls `PosterRenderer`, at scale 0.6
   (1063 × 1417 px). Redraw them when a style's look changes.
+  `cover-golden-hour.webp` is the cover of the app's sample album, Golden
+  Hour: the label of the hero's record and the cover in Adjust.
 - The icons (`icon-512.png`, `apple-touch-icon.png`, `favicon.png`) are the
   app icon, exported from `TrackPrint/AppIcon.icon` with Icon Composer's
   `ictool` (`--export-image`, macOS rendition for the icon and favicon, iOS
