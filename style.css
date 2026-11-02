@@ -447,6 +447,13 @@ main {
     color: var(--text);
 }
 
+.fineprint {
+    margin: 0.75rem auto 0;
+    max-width: 34rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
 /* And more */
 
 .more {
