@@ -723,6 +723,42 @@ main.narrow h2 {
     color: var(--muted);
 }
 
+/* For rights holders: what we can do and what to send, side by side. */
+
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.columns > div {
+    padding: 1.25rem 1.4rem;
+    border-radius: 16px;
+    background: var(--surface);
+}
+
+.columns h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+}
+
+.columns ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.columns li + li {
+    margin-top: 0.4rem;
+}
+
+@media (max-width: 760px) {
+    .columns {
+        grid-template-columns: 1fr;
+    }
+}
+
 form label {
     display: block;
     font-weight: 600;

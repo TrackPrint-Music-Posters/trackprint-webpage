@@ -13,8 +13,9 @@ GitHub Pages serves `main` from the repo root:
 |---|---|---|
 | `index.html` | `…/trackprint-webpage/` | Marketing URL in App Store Connect |
 | `support.html` | `…/trackprint-webpage/support.html` | Support URL in App Store Connect, the app's Settings ▸ Support, and the MusicBrainz User-Agent contact |
+| `support.html#rights` | `…/trackprint-webpage/support.html#rights` | The app's Settings ▸ Report a Rights Issue |
 
-The app names both addresses in one place, `TrackPrint/Legal/LegalLinks.swift`
+The app names these addresses in one place, `TrackPrint/Legal/LegalLinks.swift`
 in the app repo, and `MusicBrainzAPI.contact` in its package. If a page is
 renamed or the site moves, change those in the same release, and keep the old
 address answering until the builds that use it are gone.
@@ -23,15 +24,20 @@ address answering until the builds that use it are gone.
 
 - `index.html` is the landing page, `style.css` the styles of both pages. Open
   a page in a browser to preview it; there is nothing to install.
-- `support.html` holds the questions people ask most, the contact email and
-  the feedback form. The form posts to the same endpoint and contract as the
-  app's Settings ▸ Send Feedback, documented in
+- `support.html` holds the questions people ask most, the contact email, a
+  section for rights holders and the feedback form. The form posts to the
+  same endpoint and contract as the app's Settings ▸ Send Feedback,
+  documented in
   [trackprint-feedback](https://github.com/TrackPrint-Music-Posters/trackprint-feedback),
   and the report becomes an issue in the app's private repo. It sends the
   version as `? via website`. The function only answers browsers from this
   site's origin (`https://trackprint-music-posters.github.io`), so the form
   fails from a local preview or if the site moves to another domain: add the
   new origin to `ALLOWED_ORIGINS` in the function first.
+- The For rights holders section on `support.html` says what we can do about
+  a rights notice and what to send us. The app opens it as
+  `support.html#rights` from Settings ▸ Report a Rights Issue, so keep the
+  `rights` id even if the heading changes.
 - `images/` holds the posters the page shows, one per style, as WebP
   (`cwebp -q 86`), and `og-image.jpg` (1200 × 630) for link previews. The
   albums are **made up**, with generated abstract covers: never put a real
