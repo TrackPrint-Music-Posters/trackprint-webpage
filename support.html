@@ -2,52 +2,61 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Support – TrackPrint</title>
 <meta name="description" content="Help with TrackPrint, the album poster app: answers to common questions, the contact email, and a form to report a bug or request a feature.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#ddd4c3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0e0e" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<main class="narrow">
-<nav class="back"><a href="./">← TrackPrint</a></nav>
+<body class="notes">
+<nav class="wrap back"><a href="./">← TrackPrint</a><span>Liner notes</span></nav>
+<main class="wrap">
+<article class="sheet">
+<div class="sheet-head">
+<div>
+<p class="kicker">TrackPrint · Liner notes</p>
 <h1>Support</h1>
+</div>
+<p class="cat">For iPhone, iPad and Mac<br>© 2026 TrackPrint</p>
+</div>
 <p class="lede-left">Answers to the questions people ask most, and a form to report a bug or ask for a feature. You can also write to <a href="mailto:mateoas@icloud.com">mateoas@icloud.com</a>.</p>
 
-<h2 id="questions">Questions</h2>
+<h2 id="questions"><b aria-hidden="true">I</b>Questions</h2>
 <div class="faq">
 <details>
-<summary>Where do the albums come from?</summary>
+<summary><span class="q">01</span><span>Where do the albums come from?</span><i class="lead" aria-hidden="true"></i></summary>
 <p>From MusicBrainz, the open music encyclopedia, with covers from the Cover Art Archive. Searching needs no account and no permission.</p>
 </details>
 <details>
-<summary>TrackPrint can’t find an album, or says MusicBrainz is busy.</summary>
+<summary><span class="q">02</span><span>TrackPrint can’t find an album, or says MusicBrainz is busy.</span><i class="lead" aria-hidden="true"></i></summary>
 <p>Try a shorter search with the album’s title and the artist. MusicBrainz is a free, community-run service and sometimes answers slowly; TrackPrint keeps trying for a few seconds, and trying again a moment later usually works.</p>
 </details>
 <details>
-<summary>How big can I print a poster?</summary>
+<summary><span class="q">03</span><span>How big can I print a poster?</span><i class="lead" aria-hidden="true"></i></summary>
 <p>Print is 15 × 20 cm and Poster 20 × 30 cm, both at 300 ppi, the resolution print shops ask for. Post and Story are sized for screens. Export as PDF or PNG for the sharpest print, and check a test print first: colours on paper never quite match a screen.</p>
 </details>
 <details>
-<summary>How do my posters get to my other devices?</summary>
+<summary><span class="q">04</span><span>How do my posters get to my other devices?</span><i class="lead" aria-hidden="true"></i></summary>
 <p>Through your own iCloud account. Sign in with the same Apple Account on each device and leave iCloud Sync on in TrackPrint’s Settings. Turned off, your posters stay on the device you made them on. We never see your posters.</p>
 </details>
 <details>
-<summary>Can I share or sell my posters?</summary>
+<summary><span class="q">05</span><span>Can I share or sell my posters?</span><i class="lead" aria-hidden="true"></i></summary>
 <p>A poster for your own wall or as a gift is fine, and so is having it printed on paper at a print shop. Posting a poster with a real album cover online, or selling it, needs the permission of the rights holders: the label, the artist and the photographer. The Post and Story sizes don’t give that permission. See section 4 of the <a href="https://trackprint-music-posters.github.io/trackprint-legal-docs/nutzungsbedingungen.en.html#t4">terms of use</a>.</p>
 </details>
 <details>
-<summary>Why does TrackPrint ask me to agree to its terms?</summary>
+<summary><span class="q">06</span><span>Why does TrackPrint ask me to agree to its terms?</span><i class="lead" aria-hidden="true"></i></summary>
 <p>Because a poster carries other people’s work. The <a href="https://trackprint-music-posters.github.io/trackprint-legal-docs/nutzungsbedingungen.en.html">terms of use</a> say what’s fine, like a poster for your wall or a gift, and what needs permission. You agree once, and can read them again in Settings ▸ About.</p>
 </details>
 <details>
-<summary>What does TrackPrint collect about me?</summary>
+<summary><span class="q">07</span><span>What does TrackPrint collect about me?</span><i class="lead" aria-hidden="true"></i></summary>
 <p>Nothing for analytics, ads or tracking, and there is no account. Searches go straight to MusicBrainz, and your posters stay on your devices and in your iCloud. The <a href="https://trackprint-music-posters.github.io/trackprint-legal-docs/datenschutzerklaerung.en.html">privacy policy</a> has the details.</p>
 </details>
 </div>
 
-<h2 id="rights">For rights holders</h2>
+<h2 id="rights"><b aria-hidden="true">II</b>For rights holders</h2>
 <p class="lede-left">TrackPrint is a free app that lays out an album’s cover, title and tracklist as a poster for the user’s own wall. It hosts nothing: covers come from the Cover Art Archive, posters stay on the user’s devices and in their private iCloud, and we never see them.</p>
 <div class="columns">
 <div>
@@ -68,9 +77,9 @@
 </ul>
 </div>
 </div>
-<p>Write to <a href="mailto:mateoas@icloud.com">mateoas@icloud.com</a>. We reply within 7 days.</p>
+<p class="contact">Write to <a href="mailto:mateoas@icloud.com">mateoas@icloud.com</a>. We reply within 7 days.</p>
 
-<h2 id="send-feedback">Send Feedback</h2>
+<h2 id="send-feedback"><b aria-hidden="true">III</b>Send Feedback</h2>
 <p class="lede-left">Found a bug or missing something? Tell us here; no account needed. The app has the same form in Settings ▸ Send Feedback.</p>
 
 <form id="feedback" novalidate>
@@ -96,15 +105,18 @@
 <p id="status" role="status" aria-live="polite"></p>
 <button type="submit">Send</button>
 </form>
+</article>
 </main>
 
 <footer>
+<div class="wrap">
 <p>© 2026 TrackPrint</p>
 <p>
 <a href="https://trackprint-music-posters.github.io/trackprint-legal-docs/impressum.en.html">Legal Notice</a>
 <a href="https://trackprint-music-posters.github.io/trackprint-legal-docs/datenschutzerklaerung.en.html">Privacy Policy</a>
 <a href="https://trackprint-music-posters.github.io/trackprint-legal-docs/nutzungsbedingungen.en.html">Terms of Use</a>
 </p>
+</div>
 </footer>
 
 <script>
