@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>TrackPrint</title>
+  <rect width="1024" height="1024" rx="230" fill="#0E0E0E"/>
+  <rect x="376" y="88" width="480" height="640" fill="#3478F6"/>
+  <rect x="324" y="140" width="480" height="640" fill="#12A594"/>
+  <rect x="272" y="192" width="480" height="640" fill="#E8590C"/>
+  <rect x="220" y="244" width="480" height="640" fill="#D6409F"/>
+  <rect x="168" y="296" width="480" height="640" fill="#F1EBDF"/>
+  <circle cx="408" cy="536" r="200" fill="#0E0E0E"/>
+  <circle cx="408" cy="536" r="88" fill="#F48754"/>
+</svg>

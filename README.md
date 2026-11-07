@@ -63,11 +63,14 @@ address answering until the builds that use it are gone.
   (1063 × 1417 px). Redraw them when a style's look changes.
   `cover-golden-hour.webp` is the cover of the app's sample album, Golden
   Hour: the label of the hero's record and the cover in Adjust.
-- The icons (`icon-512.png`, `apple-touch-icon.png`, `favicon.png`) are the
-  app icon, exported from `TrackPrint/AppIcon.icon` with Icon Composer's
-  `ictool` (`--export-image`, macOS rendition for the icon and favicon, iOS
-  for the touch icon) and scaled with `sips -Z <size>`. Export them again if
-  the app icon changes.
+- The icons (`icon-512.png`, `apple-touch-icon.png`) are the app icon,
+  exported from `TrackPrint/AppIcon.icon` with Icon Composer's `ictool`
+  (`--export-image` at 1024 px, macOS rendition for the icon, iOS for the
+  touch icon) and scaled with `sips -Z <size>`. `favicon.png` is the app
+  icon flattened so it reads at 16 px, without the record's grooves, the
+  spindle or the tracklist lines: `favicon.svg`, drawn at 1024 px and scaled
+  with `sips -Z 64`. Export them again, and redraw `favicon.svg`, if the app
+  icon changes.
 - The footer links to the Impressum, privacy policy and terms of use in the
   public
   [trackprint-legal-docs](https://github.com/TrackPrint-Music-Posters/trackprint-legal-docs)
