@@ -16,15 +16,23 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav class="topbar" aria-label="Main">
+<nav class="topbar" aria-label="Main" data-side="a">
 <div class="wrap">
 <a class="brand" href="./"><img src="favicon.png" width="26" height="26" alt=""><span>TrackPrint</span></a>
+<div class="sides" aria-label="Sides">
+<a href="#welcome" data-to="a" aria-current="true"><span class="t">Side </span>A</a>
+<a href="#side-b" data-to="b"><span class="t">Side </span>B</a>
+</div>
 <ol class="tracks">
-<li><a href="#welcome" style="--c: var(--accent-text)"><b>A1</b><span class="t">Welcome</span></a></li>
-<li><a href="#find" style="--c: var(--pink)"><b>A2</b><span class="t">Find</span></a></li>
-<li><a href="#styles" style="--c: var(--orange)"><b>A3</b><span class="t">Styles</span></a></li>
-<li><a href="#adjust" style="--c: var(--teal)"><b>A4</b><span class="t">Adjust</span></a></li>
-<li><a href="#print" style="--c: var(--blue)"><b>A5</b><span class="t">Print</span></a></li>
+<li data-side="a"><a href="#welcome" style="--c: var(--accent-text)"><b>A1</b><span class="t">Welcome</span></a></li>
+<li data-side="a"><a href="#find" style="--c: var(--pink)"><b>A2</b><span class="t">Find</span></a></li>
+<li data-side="a"><a href="#styles" style="--c: var(--orange)"><b>A3</b><span class="t">Styles</span></a></li>
+<li data-side="a"><a href="#adjust" style="--c: var(--teal)"><b>A4</b><span class="t">Adjust</span></a></li>
+<li data-side="a"><a href="#print" style="--c: var(--blue)"><b>A5</b><span class="t">Print</span></a></li>
+<li data-side="b"><a href="#now-playing" style="--c: var(--purple)"><b>B1</b><span class="t">Now Playing</span></a></li>
+<li data-side="b"><a href="#lock-screen" style="--c: var(--green)"><b>B2</b><span class="t">Lock Screen</span></a></li>
+<li data-side="b"><a href="#mini-player" style="--c: var(--orange)"><b>B3</b><span class="t">Mini Player</span></a></li>
+<li data-side="b"><a href="#notch" style="--c: var(--teal)"><b>B4</b><span class="t">Notch</span></a></li>
 </ol>
 <a class="support-link" href="support.html">Support</a>
 </div>
@@ -372,20 +380,36 @@ window.addEventListener('scroll', showProgress, { passive: true });
 window.addEventListener('resize', showProgress);
 showProgress();
 
-// The track being read is marked in the top bar.
+// The track being read is marked in the top bar, and the bar turns to the
+// side it is on: past A5 the record has turned over to side B.
+const topbar = document.querySelector('.topbar');
 const trackLinks = [...document.querySelectorAll('.tracks a')];
+const sideLinks = [...document.querySelectorAll('.sides a')];
+const SIDE_A = ['welcome', 'find', 'styles', 'adjust', 'print'];
+const SIDE_B = ['side-b', 'now-playing', 'lock-screen', 'mini-player', 'notch'];
+
+function turnTo(side) {
+    topbar.dataset.side = side;
+    for (const link of sideLinks) {
+        link.toggleAttribute('aria-current', link.dataset.to === side);
+    }
+}
+
 if ('IntersectionObserver' in window) {
+    // What follows side B (the list of extras, the closing) stays on side B.
+    const sections = [...SIDE_A, ...SIDE_B].map((id) => document.getElementById(id))
+        .concat([...document.querySelectorAll('.more, .closing')]);
     const observer = new IntersectionObserver((entries) => {
         for (const entry of entries) {
             if (entry.isIntersecting) {
+                turnTo(SIDE_A.includes(entry.target.id) ? 'a' : 'b');
                 for (const link of trackLinks) {
                     link.toggleAttribute('aria-current', link.hash === '#' + entry.target.id);
                 }
             }
         }
     }, { rootMargin: '-40% 0px -55% 0px' });
-    for (const link of trackLinks) {
-        const section = document.getElementById(link.hash.slice(1));
+    for (const section of sections) {
         if (section) observer.observe(section);
     }
 }
