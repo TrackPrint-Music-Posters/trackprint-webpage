@@ -636,7 +636,8 @@ section.side {
     min-height: 0;
 }
 
-.reel.playing .style .print {
+.reel.playing .style .print,
+.reel.playing .style .phone-shot {
     grid-row: 1;
     place-self: center;
     width: auto;
@@ -658,6 +659,7 @@ section.side {
 }
 
 .reel.playing .style:not(.near) .print,
+.reel.playing .style:not(.near) .phone-shot,
 .reel.playing .style:not(.near) .text {
     visibility: hidden;
 }
@@ -837,6 +839,402 @@ section.side {
     text-align: center;
 }
 
+/* Side B: the record turned over. Its tracks are the players: what the
+   Music app plays, in each style's player (B1), on the Lock Screen (B2), in
+   the Mac's mini player (B3) and round its notch (B4). Their pictures are
+   screenshots of the app playing the sample album. */
+
+.turn {
+    display: grid;
+    justify-items: center;
+    padding-top: 9rem;
+    text-align: center;
+}
+
+.turn .track {
+    margin-top: 2rem;
+    white-space: nowrap;
+}
+
+.turn h2 {
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+}
+
+.label.turning {
+    width: 11rem;
+    background: repeating-radial-gradient(
+        circle at 50% 50%,
+        var(--vinyl) 0 2px,
+        var(--vinyl-groove) 2px 3px
+    );
+    animation: spin 1.8s linear infinite;
+}
+
+.label.turning span {
+    position: relative;
+    font: 700 2.4rem/1 var(--display);
+    color: var(--on-accent);
+}
+
+/* A phone's screenshot, in a thin dark bezel. */
+
+.phone-shot {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 640 / 1391;
+    border-radius: 13% / 6%;
+    background: #000;
+    box-shadow: 0 0 0 5px #1a1a1a, 0 0 0 6px var(--groove), 0 24px 48px var(--shadow);
+}
+
+.players .style .text b {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.players .reel-items {
+    gap: 3rem 2.5rem;
+}
+
+.players + .fineprint {
+    margin-top: 2.5rem;
+}
+
+/* B2: the Lock Screen beside the island held open. */
+
+.lockup {
+    display: grid;
+    grid-template-columns: minmax(0, 17rem) minmax(0, 26rem);
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.lockup figure {
+    margin: 0;
+    text-align: center;
+}
+
+.lockup figcaption {
+    margin-top: 1.4rem;
+    font: 0.75rem/1.3 var(--mono);
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.island img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 24px 30px var(--shadow));
+}
+
+/* B3: a Mac desktop with another app's window, the mini player floating at
+   its top right, at its size in points. */
+
+.desk {
+    position: relative;
+    max-width: 52rem;
+    min-height: 27rem;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background:
+        radial-gradient(90% 120% at 85% 10%, #fbb677 0, transparent 55%),
+        radial-gradient(80% 100% at 0% 100%, #3d4a7a 0, transparent 60%),
+        linear-gradient(150deg, #8c6670, #ee7b45 60%, #fbb677);
+    box-shadow: 0 0 0 1px var(--groove), 0 30px 60px var(--shadow);
+}
+
+.desk-bar,
+.notch-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    height: 1.75rem;
+    padding: 0 0.9rem;
+    background: rgb(28 20 24 / 0.35);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    font: 500 0.75rem/1 var(--sans);
+    color: #fff;
+}
+
+.desk-bar .clock {
+    margin-left: auto;
+}
+
+.desk-window {
+    position: absolute;
+    top: 3.5rem;
+    left: 6%;
+    display: grid;
+    gap: 0.7rem;
+    align-content: start;
+    width: 50%;
+    height: 21rem;
+    padding: 2.6rem 2rem;
+    border-radius: 12px;
+    background: #fbfaf7;
+    box-shadow: 0 20px 50px rgb(40 20 20 / 0.35);
+}
+
+.desk-window::before {
+    content: "";
+    position: absolute;
+    top: 0.85rem;
+    left: 0.9rem;
+    width: 3rem;
+    height: 0.7rem;
+    background:
+        radial-gradient(circle at 0.35rem 50%, #ff5f57 0.32rem, transparent 0.34rem),
+        radial-gradient(circle at 1.5rem 50%, #febc2e 0.32rem, transparent 0.34rem),
+        radial-gradient(circle at 2.65rem 50%, #28c840 0.32rem, transparent 0.34rem);
+}
+
+.desk-window i {
+    height: 0.55rem;
+    border-radius: 3px;
+    background: #e6e3dd;
+}
+
+.desk-window i:first-child {
+    width: 55%;
+    height: 1.2rem;
+    margin-bottom: 0.6rem;
+    background: #d6d1c8;
+}
+
+.desk-window i:nth-child(4n) {
+    width: 70%;
+}
+
+.mini {
+    position: absolute;
+    top: calc(1.75rem + 16px);
+    right: 16px;
+    max-width: calc(100% - 24px);
+    height: auto;
+    filter: drop-shadow(0 14px 22px rgb(30 10 10 / 0.4));
+}
+
+.mini-controls {
+    display: grid;
+    justify-items: center;
+    gap: 0.8rem;
+    margin-top: 2rem;
+}
+
+.mini-controls[hidden] {
+    display: none;
+}
+
+.seg {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.seg button {
+    padding: 0.5rem 0.8rem;
+    border: 1px solid var(--groove);
+    border-radius: 999px;
+    background: none;
+    font: 700 0.72rem/1 var(--mono);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.seg button:hover {
+    color: var(--text);
+}
+
+.seg button[aria-pressed="true"] {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--on-accent);
+}
+
+kbd {
+    padding: 0.05rem 0.3rem;
+    border: 1px solid var(--groove);
+    border-bottom-width: 2px;
+    border-radius: 4px;
+    font: 700 0.8em/1 var(--mono);
+    color: var(--text);
+}
+
+/* B4: the top of a MacBook's screen at its size in points (736 of them
+   across, scaled down with the page), the notch in the middle of the menu
+   bar. Open, the player hangs from the screen's top edge. */
+
+.notch-screen {
+    --pt: calc(100cqw / 736);
+    position: relative;
+    max-width: 46rem;
+    margin: 0 auto;
+    container-type: inline-size;
+    border: 6px solid #1a1a1a;
+    border-bottom: 0;
+    border-radius: 14px 14px 0 0;
+    background:
+        radial-gradient(70% 140% at 80% 0%, #fbb677 0, transparent 60%),
+        linear-gradient(160deg, #3d4a7a, #8c6670 55%, #ee7b45);
+    box-shadow: 0 30px 60px var(--shadow);
+}
+
+.notch-screen::after {
+    content: "";
+    display: block;
+    height: calc(300 * var(--pt));
+}
+
+.notch-bar {
+    position: absolute;
+    inset: 0 0 auto;
+    justify-content: space-between;
+    height: calc(32 * var(--pt));
+    font-size: max(0.55rem, calc(13 * var(--pt)));
+}
+
+.notch-bar > span {
+    display: flex;
+    gap: 1.1em;
+}
+
+.notch-shape {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: calc(185 * var(--pt));
+    height: calc(32 * var(--pt));
+    padding: 0;
+    border: 0;
+    border-radius: 0 0 calc(9 * var(--pt)) calc(9 * var(--pt));
+    background: #000;
+    cursor: pointer;
+    transform: translateX(-50%);
+    transform-origin: 50% 0;
+    transition: transform 0.25s, opacity 0.2s;
+}
+
+/* The soft shoulders where the notch meets the screen's top edge. */
+.notch-shape::before,
+.notch-shape::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: calc(14 * var(--pt));
+    height: calc(10 * var(--pt));
+}
+
+.notch-shape::before {
+    right: 100%;
+    background: radial-gradient(circle at 0 100%, transparent 70%, #000 72%);
+}
+
+.notch-shape::after {
+    left: 100%;
+    background: radial-gradient(circle at 100% 100%, transparent 70%, #000 72%);
+}
+
+.notch-margin {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    fill: none;
+    stroke-width: 2;
+}
+
+.notch-screen.near .notch-shape {
+    transform: translateX(-50%) scale(1.08);
+}
+
+.notch-open {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: calc(616 * var(--pt));
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) scale(0.3, 0.13);
+    transform-origin: 50% 0;
+    transition: transform 0.4s cubic-bezier(0.3, 1.25, 0.5, 1), opacity 0.2s, visibility 0s 0.4s;
+}
+
+/* The screenshot is the pill's open player, whose top corners are round;
+   a band of black squares them off against the screen's top edge. */
+.notch-open::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(28 * var(--pt));
+    right: calc(28 * var(--pt));
+    height: calc(30 * var(--pt));
+    background: #000;
+}
+
+.notch-open img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.notch-screen.open .notch-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%);
+    transition: transform 0.4s cubic-bezier(0.3, 1.25, 0.5, 1), opacity 0.15s, visibility 0s;
+}
+
+.notch-screen.open .notch-shape {
+    opacity: 0;
+}
+
+.notch-styles {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem 1.25rem;
+    max-width: 60rem;
+    margin: 3.5rem auto 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.notch-styles img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.notch-styles span {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+    font: 0.75rem/1 var(--mono);
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.notch-styles b {
+    color: var(--teal);
+}
+
+.notch-styles + .fineprint {
+    margin-top: 2rem;
+}
+
 /* And a little more */
 
 .more {
@@ -974,8 +1372,15 @@ footer a:hover {
     }
 
     .disc,
+    .label.turning,
     .meter i {
         animation: none;
+    }
+
+    .notch-shape,
+    .notch-open,
+    .notch-screen.open .notch-open {
+        transition: none;
     }
 
     .meter i:nth-child(1) {
@@ -1065,6 +1470,14 @@ footer a:hover {
     .more ul {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .reel.playing .style .phone-shot {
+        height: 100%;
+    }
+
+    .notch-styles {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 760px) {
@@ -1089,6 +1502,24 @@ footer a:hover {
     section.side,
     .more {
         padding-top: 5.5rem;
+    }
+
+    .turn {
+        padding-top: 6rem;
+    }
+
+    .lockup {
+        grid-template-columns: minmax(0, 15rem);
+        gap: 3rem;
+    }
+
+    .desk {
+        min-height: 25rem;
+    }
+
+    .desk-window {
+        width: 80%;
+        opacity: 0.85;
     }
 
     .sources {

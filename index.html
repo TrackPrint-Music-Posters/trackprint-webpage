@@ -85,7 +85,7 @@
 <h2 id="styles-title">Eight styles.<br>One album.</h2>
 <p class="line">Every style lays out the same album its own way, each with its own typefaces. Flip through them and pick the one that fits your wall.</p>
 </div>
-<div class="reel" id="reel" style="--count: 8">
+<div class="reel" style="--count: 8">
 <div class="stage">
 <ol class="reel-index" aria-label="Go to a style">
 <li><button type="button" data-step="0"><b>01</b><span class="name">Classic</span><span class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></button></li>
@@ -131,7 +131,7 @@
 <div class="text"><span class="n">08</span><h3>Liner Notes</h3><p>A cassette J-card in monospace, the cover in halftone and a barcode of the songs.</p></div>
 </li>
 </ol>
-<p class="reel-count" aria-hidden="true"><b id="reel-number">01</b>of 08</p>
+<p class="reel-count" aria-hidden="true"><b class="reel-number">01</b>of 08</p>
 </div>
 </div>
 </section>
@@ -171,6 +171,149 @@
 </ul>
 <p class="exports">Or a size of your own. Export as <strong>JPEG</strong>, <strong>PNG</strong> or <strong>PDF</strong>.</p>
 <p class="fineprint">TrackPrint is for posters for your own wall. Album covers, titles and names belong to their artists, labels and photographers.</p>
+</div>
+</section>
+
+<section class="turn" id="side-b" aria-labelledby="side-b-title">
+<div class="label turning" aria-hidden="true"><span>B</span></div>
+<p class="track" style="--c: var(--accent-text)"><b>Side B</b>4 Tracks</p>
+<h2 id="side-b-title">Now turn<br>it over.</h2>
+<p class="line">TrackPrint plays along, too. Side B is the album you’re listening to in the Music app, drawn after the eight styles.</p>
+</section>
+
+<section class="side" id="now-playing" aria-labelledby="now-playing-title">
+<div class="intro">
+<p class="track" style="--c: var(--purple)"><b>B1</b>Now Playing</p>
+<h2 id="now-playing-title">Every style<br>plays along.</h2>
+<p class="line">See what the Music app is playing in a player drawn after each of the eight styles. Open the album and tap a song to play it, or go full screen.</p>
+</div>
+<div class="reel players" style="--count: 8">
+<div class="stage">
+<ol class="reel-index" aria-label="Go to a player">
+<li><button type="button" data-step="0"><b>01</b><span class="name">Classic</span><span class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></button></li>
+<li><button type="button" data-step="1"><b>02</b><span class="name">Tracklist</span><span class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></button></li>
+<li><button type="button" data-step="2"><b>03</b><span class="name">Vinyl</span><span class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></button></li>
+<li><button type="button" data-step="3"><b>04</b><span class="name">Aura</span><span class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></button></li>
+<li><button type="button" data-step="4"><b>05</b><span class="name">Runtime</span><span class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></button></li>
+<li><button type="button" data-step="5"><b>06</b><span class="name">Editorial</span><span class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></button></li>
+<li><button type="button" data-step="6"><b>07</b><span class="name">Swiss</span><span class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></button></li>
+<li><button type="button" data-step="7"><b>08</b><span class="name">Liner Notes</span><span class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></button></li>
+</ol>
+<ol class="reel-items">
+<li class="style" id="player-classic">
+<img class="phone-shot" src="images/player-classic.webp" width="640" height="1391" alt="The Classic player on iPhone, playing the made-up album Golden Hour" loading="lazy">
+<div class="text"><span class="n">01</span><h3>Classic</h3><p><b>The Poster.</b> The poster in its crop marks, its five colours filling in turn as the song plays.</p></div>
+</li>
+<li class="style" id="player-tracklist">
+<img class="phone-shot" src="images/player-tracklist.webp" width="640" height="1391" alt="The Tracklist player on iPhone, playing the made-up album Golden Hour" loading="lazy">
+<div class="text"><span class="n">02</span><h3>Tracklist</h3><p><b>Wall of Words.</b> The album’s songs run together, the one playing lit up as far as it has played.</p></div>
+</li>
+<li class="style" id="player-vinyl">
+<img class="phone-shot" src="images/player-vinyl.webp" width="640" height="1391" alt="The Vinyl player on iPhone, playing the made-up album Golden Hour" loading="lazy">
+<div class="text"><span class="n">03</span><h3>Vinyl</h3><p><b>The Groove.</b> The record turns at 33⅓, the album’s songs along its groove.</p></div>
+</li>
+<li class="style" id="player-aura">
+<img class="phone-shot" src="images/player-aura.webp" width="640" height="1391" alt="The Aura player on iPhone, playing the made-up album Golden Hour" loading="lazy">
+<div class="text"><span class="n">04</span><h3>Aura</h3><p><b>Glow.</b> The cover under a warm halo, glass buttons and what plays next.</p></div>
+</li>
+<li class="style" id="player-runtime">
+<img class="phone-shot" src="images/player-runtime.webp" width="640" height="1391" alt="The Runtime player on iPhone, playing the made-up album Golden Hour" loading="lazy">
+<div class="text"><span class="n">05</span><h3>Runtime</h3><p><b>Instrument.</b> The time played, huge, over the song’s ten-second segments on graph paper.</p></div>
+</li>
+<li class="style" id="player-editorial">
+<img class="phone-shot" src="images/player-editorial.webp" width="640" height="1391" alt="The Editorial player on iPhone, playing the made-up album Golden Hour" loading="lazy">
+<div class="text"><span class="n">06</span><h3>Editorial</h3><p><b>Magazine.</b> The artist as the masthead and an opening paragraph on what plays.</p></div>
+</li>
+<li class="style" id="player-swiss">
+<img class="phone-shot" src="images/player-swiss.webp" width="640" height="1391" alt="The Swiss player on iPhone, playing the made-up album Golden Hour" loading="lazy">
+<div class="text"><span class="n">07</span><h3>Swiss</h3><p><b>Bauhaus.</b> The huge circle, the track’s number giant and the title up the edge.</p></div>
+</li>
+<li class="style" id="player-liner-notes">
+<img class="phone-shot" src="images/player-liner-notes.webp" width="640" height="1391" alt="The Liner Notes player on iPhone, playing the made-up album Golden Hour" loading="lazy">
+<div class="text"><span class="n">08</span><h3>Liner Notes</h3><p><b>Open Case.</b> A cassette case lying open, its reels winding as the album plays.</p></div>
+</li>
+</ol>
+<p class="reel-count" aria-hidden="true"><b class="reel-number">01</b>of 08</p>
+</div>
+</div>
+<p class="fineprint">Now Playing shows what plays and keeps none of it. Posters still come from MusicBrainz.</p>
+</section>
+
+<section class="side" id="lock-screen" aria-labelledby="lock-screen-title">
+<div class="intro">
+<p class="track" style="--c: var(--green)"><b>B2</b>Lock Screen</p>
+<h2 id="lock-screen-title">Right on the<br>Lock Screen.</h2>
+<p class="line">On iPhone the song playing stays on the Lock Screen and in the Dynamic Island, in the player’s style, with play, pause and skip.</p>
+</div>
+<div class="content lockup">
+<figure class="locked">
+<img class="phone-shot" src="images/lock-classic.webp" width="640" height="1391" alt="An iPhone Lock Screen with TrackPrint’s Classic card: the palette’s bands, Golden Hour, the song and its progress" loading="lazy">
+<figcaption>On the Lock Screen</figcaption>
+</figure>
+<figure class="island">
+<img src="images/island-classic.webp" width="640" height="264" alt="The Dynamic Island held open: Golden Hour, the song, its progress, and previous, pause and next" loading="lazy">
+<figcaption>In the Dynamic Island, held open</figcaption>
+</figure>
+</div>
+</section>
+
+<section class="side" id="mini-player" aria-labelledby="mini-player-title">
+<div class="intro">
+<p class="track" style="--c: var(--orange)"><b>B3</b>Mini Player</p>
+<h2 id="mini-player-title">Over<br>every app.</h2>
+<p class="line">On the Mac the mini player floats the song playing over your work, in four sizes, from a thin strip to a square with the album’s tracks.</p>
+</div>
+<div class="content">
+<div class="desk">
+<div class="desk-bar" aria-hidden="true"><b>Pages</b><span>File</span><span>Edit</span><span>View</span><span class="clock">Sat 9:41</span></div>
+<div class="desk-window" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<img class="mini" id="mini" src="images/mini/classic-medium.webp" width="336" height="160" alt="The mini player at Medium size in the Classic style, over another app" decoding="async">
+</div>
+<div class="mini-controls" id="mini-controls" hidden>
+<div class="seg" role="group" aria-label="Size" id="mini-size">
+<button type="button" data-size="strip" aria-pressed="false">Strip</button>
+<button type="button" data-size="small" aria-pressed="false">Small</button>
+<button type="button" data-size="medium" aria-pressed="true">Medium</button>
+<button type="button" data-size="large" aria-pressed="false">Large</button>
+</div>
+<div class="seg" role="group" aria-label="Style" id="mini-style">
+<button type="button" data-style="classic" aria-pressed="true">Classic</button>
+<button type="button" data-style="tracklist" aria-pressed="false">Tracklist</button>
+<button type="button" data-style="vinyl" aria-pressed="false">Vinyl</button>
+<button type="button" data-style="aura" aria-pressed="false">Aura</button>
+<button type="button" data-style="runtime" aria-pressed="false">Runtime</button>
+<button type="button" data-style="editorial" aria-pressed="false">Editorial</button>
+<button type="button" data-style="swiss" aria-pressed="false">Swiss</button>
+<button type="button" data-style="liner-notes" aria-pressed="false">Liner Notes</button>
+</div>
+</div>
+<p class="fineprint">Window ▸ Show Mini Player, or <kbd>⇧</kbd><kbd>⌘</kbd><kbd>M</kbd>. Right-click it to change its size and style, keep it on top or show it on every desktop.</p>
+</div>
+</section>
+
+<section class="side" id="notch" aria-labelledby="notch-title">
+<div class="intro">
+<p class="track" style="--c: var(--teal)"><b>B4</b>Notch</p>
+<h2 id="notch-title">Round<br>the notch.</h2>
+<p class="line">The notch player draws the song’s progress round your MacBook’s notch. Rest the pointer on it and it opens into the player. On a screen without a notch it’s a small pill in the menu bar.</p>
+</div>
+<div class="content">
+<div class="notch-screen" id="notch-screen">
+<div class="notch-bar" aria-hidden="true"><span><b>Pages</b><span>File</span><span>Edit</span><span>View</span></span><span>Sat 9:41</span></div>
+<div class="notch-open" id="notch-open"><img src="images/notch-classic.webp" width="616" height="247" alt="The notch player open under the notch in the Classic style: the cover, Golden Hour, its colours as the progress, and previous, pause and next" loading="lazy"></div>
+<button class="notch-shape" id="notch-shape" type="button" aria-expanded="false" aria-controls="notch-open"><span class="visually-hidden">Open the notch player</span><svg class="notch-margin" id="notch-margin" aria-hidden="true"></svg></button>
+</div>
+<ul class="notch-styles" aria-label="The notch player in each style">
+<li><img src="images/notch-classic.webp" width="616" height="247" alt="The notch player open in the Classic style" loading="lazy"><span><b>01</b>Classic</span></li>
+<li><img src="images/notch-tracklist.webp" width="616" height="247" alt="The notch player open in the Tracklist style" loading="lazy"><span><b>02</b>Tracklist</span></li>
+<li><img src="images/notch-vinyl.webp" width="616" height="247" alt="The notch player open in the Vinyl style" loading="lazy"><span><b>03</b>Vinyl</span></li>
+<li><img src="images/notch-aura.webp" width="616" height="247" alt="The notch player open in the Aura style" loading="lazy"><span><b>04</b>Aura</span></li>
+<li><img src="images/notch-runtime.webp" width="616" height="247" alt="The notch player open in the Runtime style" loading="lazy"><span><b>05</b>Runtime</span></li>
+<li><img src="images/notch-editorial.webp" width="616" height="247" alt="The notch player open in the Editorial style" loading="lazy"><span><b>06</b>Editorial</span></li>
+<li><img src="images/notch-swiss.webp" width="616" height="247" alt="The notch player open in the Swiss style" loading="lazy"><span><b>07</b>Swiss</span></li>
+<li><img src="images/notch-liner-notes.webp" width="616" height="247" alt="The notch player open in the Liner Notes style" loading="lazy"><span><b>08</b>Liner Notes</span></li>
+</ul>
+<p class="fineprint">Window ▸ Show Notch Player, or <kbd>⇧</kbd><kbd>⌘</kbd><kbd>N</kbd>.</p>
 </div>
 </section>
 
@@ -247,16 +390,10 @@ if ('IntersectionObserver' in window) {
     }
 }
 
-// A3: the reel. While the styles pass, the stage holds still under the top
-// bar; each poster holds, then morphs into the next, and its words come in as
-// it arrives. With reduced motion it stays the grid of all eight.
-const reel = document.getElementById('reel');
-const reelStage = reel.querySelector('.stage');
-const reelStyles = [...reel.querySelectorAll('.style')];
-const reelButtons = [...reel.querySelectorAll('.reel-index button')];
-const reelNumber = document.getElementById('reel-number');
+// A3 and B1: the reels. While the styles (or the players) pass, the stage
+// holds still under the top bar; each one holds, then morphs into the next,
+// and its words come in as it arrives. With reduced motion it stays a grid.
 const stillness = window.matchMedia('(prefers-reduced-motion: reduce)');
-let reelCurrent = -1;
 
 // Each step holds for its first and last quarter and morphs in between.
 function morph(t) {
@@ -264,62 +401,182 @@ function morph(t) {
     return x * x * (3 - 2 * x);
 }
 
-function reelGeometry() {
-    const stickyTop = parseFloat(getComputedStyle(reelStage).top) || 0;
-    const travel = reel.offsetHeight - reelStage.offsetHeight;
-    const start = reel.getBoundingClientRect().top + window.scrollY - stickyTop;
-    return { travel, start };
-}
+function setUpReel(reel) {
+    const stage = reel.querySelector('.stage');
+    const items = [...reel.querySelectorAll('.style')];
+    const buttons = [...reel.querySelectorAll('.reel-index button')];
+    const number = reel.querySelector('.reel-number');
+    let current = -1;
 
-function playReel() {
-    if (!reel.classList.contains('playing')) return;
-    const { travel, start } = reelGeometry();
-    const last = reelStyles.length - 1;
-    const raw = Math.min(1, Math.max(0, (window.scrollY - start) / travel)) * last;
-    const step = Math.min(last, Math.floor(raw));
-    const at = step + morph(raw - step);
-    reelStyles.forEach((style, i) => {
-        const d = at - i;
-        // The style arriving lies over the one leaving and fades in on it.
-        const shown = d >= 0 ? (d < 1 ? 1 : 0) : Math.max(0, 1 + d);
-        const away = Math.min(1, Math.abs(d));
-        style.classList.toggle('near', shown > 0);
-        style.style.setProperty('--shown', shown);
-        style.style.setProperty('--away', away);
-        style.style.setProperty('--read', Math.max(0, 1 - away * 2.5));
-        style.style.setProperty('--toward', Math.max(-1, Math.min(1, -d)));
-    });
-    const current = Math.round(at);
-    if (current !== reelCurrent) {
-        reelCurrent = current;
-        reelButtons.forEach((button, i) => button.toggleAttribute('aria-current', i === current));
-        reelNumber.textContent = String(current + 1).padStart(2, '0');
+    function geometry() {
+        const stickyTop = parseFloat(getComputedStyle(stage).top) || 0;
+        const travel = reel.offsetHeight - stage.offsetHeight;
+        const start = reel.getBoundingClientRect().top + window.scrollY - stickyTop;
+        return { travel, start };
     }
-}
 
-function setReel() {
-    const playing = !stillness.matches;
-    reel.classList.toggle('playing', playing);
-    if (!playing) {
-        for (const style of reelStyles) {
-            style.removeAttribute('style');
-            style.classList.remove('near');
+    function play() {
+        if (!reel.classList.contains('playing')) return;
+        const { travel, start } = geometry();
+        const last = items.length - 1;
+        const raw = Math.min(1, Math.max(0, (window.scrollY - start) / travel)) * last;
+        const step = Math.min(last, Math.floor(raw));
+        const at = step + morph(raw - step);
+        items.forEach((item, i) => {
+            const d = at - i;
+            // The one arriving lies over the one leaving and fades in on it.
+            const shown = d >= 0 ? (d < 1 ? 1 : 0) : Math.max(0, 1 + d);
+            const away = Math.min(1, Math.abs(d));
+            item.classList.toggle('near', shown > 0);
+            item.style.setProperty('--shown', shown);
+            item.style.setProperty('--away', away);
+            item.style.setProperty('--read', Math.max(0, 1 - away * 2.5));
+            item.style.setProperty('--toward', Math.max(-1, Math.min(1, -d)));
+        });
+        const now = Math.round(at);
+        if (now !== current) {
+            current = now;
+            buttons.forEach((button, i) => button.toggleAttribute('aria-current', i === now));
+            number.textContent = String(now + 1).padStart(2, '0');
         }
     }
-    reelCurrent = -1;
-    playReel();
+
+    function set() {
+        const playing = !stillness.matches;
+        reel.classList.toggle('playing', playing);
+        if (!playing) {
+            for (const item of items) {
+                item.removeAttribute('style');
+                item.classList.remove('near');
+            }
+        }
+        current = -1;
+        play();
+    }
+
+    buttons.forEach((button, i) => {
+        button.addEventListener('click', () => {
+            const { travel, start } = geometry();
+            window.scrollTo({ top: start + (travel * i) / (items.length - 1) });
+        });
+    });
+    stillness.addEventListener('change', set);
+    window.addEventListener('scroll', () => requestAnimationFrame(play), { passive: true });
+    window.addEventListener('resize', play);
+    set();
+}
+document.querySelectorAll('.reel').forEach(setUpReel);
+
+// B3: the mini player on the desk, in the size and style chosen. Each is a
+// screenshot of the app, drawn at its size in points.
+const SIZES = {
+    strip: [320, 64],
+    small: [160, 160],
+    medium: [336, 160],
+    large: [336, 336],
+};
+const mini = document.getElementById('mini');
+const miniSize = document.getElementById('mini-size');
+const miniStyle = document.getElementById('mini-style');
+let size = 'medium';
+let style = 'classic';
+
+function showMini() {
+    const [width, height] = SIZES[size];
+    const name = miniStyle.querySelector(`[data-style="${style}"]`).textContent;
+    const sizeName = miniSize.querySelector(`[data-size="${size}"]`).textContent;
+    mini.width = width;
+    mini.height = height;
+    mini.src = `images/mini/${style}-${size}.webp`;
+    mini.alt = `The mini player at ${sizeName} size in the ${name} style, over another app`;
 }
 
-reelButtons.forEach((button, i) => {
-    button.addEventListener('click', () => {
-        const { travel, start } = reelGeometry();
-        window.scrollTo({ top: start + (travel * i) / (reelStyles.length - 1) });
+function choose(group, key, onChoose) {
+    group.addEventListener('click', (event) => {
+        const button = event.target.closest('button');
+        if (!button) return;
+        for (const other of group.querySelectorAll('button')) {
+            other.setAttribute('aria-pressed', String(other === button));
+        }
+        onChoose(button.dataset[key]);
+        showMini();
     });
+}
+choose(miniSize, 'size', (value) => { size = value; });
+choose(miniStyle, 'style', (value) => { style = value; });
+document.getElementById('mini-controls').hidden = false;
+
+// B4: the notch. Closed, a margin down its sides and along its foot fills in
+// Classic's five colours as you scroll to it, and once full it opens into
+// the player under it. Resting the pointer on it, or a tap, opens it too.
+const notchScreen = document.getElementById('notch-screen');
+const notchShape = document.getElementById('notch-shape');
+const notchMargin = document.getElementById('notch-margin');
+const SWATCHES = ['#FFEBD2', '#FBB677', '#EE7B45', '#8C6670', '#3D4A7A'];
+let notchTimer = 0;
+// Set once the reader opens or closes the notch; cleared when it scrolls away.
+let notchChosen = false;
+
+function drawNotchMargin() {
+    const { width: w, height: h } = notchMargin.getBoundingClientRect();
+    if (!w || !h) return;
+    const box = notchScreen.getBoundingClientRect();
+    // Empty as the screen comes up from the foot of the window, full once
+    // its top has risen to a third of the way down.
+    const fraction = Math.min(1, Math.max(0,
+        (window.innerHeight - box.top) / (window.innerHeight * 2 / 3)));
+    const r = Math.min(h * 0.32, 10);
+    const path = `M1 0V${h - r}Q1 ${h - 1} ${r} ${h - 1}H${w - r}Q${w - 1} ${h - 1} ${w - 1} ${h - r}V0`;
+    const length = 2 * h + w;
+    const played = fraction * length;
+    const each = length / SWATCHES.length;
+    let out = '';
+    SWATCHES.forEach((colour, i) => {
+        const from = i * each;
+        const to = Math.min(played, (i + 1) * each - 1.5);
+        if (to > from) {
+            out += `<path d="${path}" stroke="${colour}" stroke-dasharray="0 ${from} ${to - from} ${length}"/>`;
+        }
+    });
+    notchMargin.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    notchMargin.innerHTML = out;
+    if (fraction < 0.1) notchChosen = false;
+    if (!notchChosen) showNotch(fraction >= 1);
+}
+
+function showNotch(open) {
+    notchScreen.classList.toggle('open', open);
+    notchShape.setAttribute('aria-expanded', String(open));
+}
+
+function openNotch(open) {
+    clearTimeout(notchTimer);
+    notchChosen = true;
+    showNotch(open);
+}
+notchShape.addEventListener('click', () => {
+    openNotch(!notchScreen.classList.contains('open'));
 });
-stillness.addEventListener('change', setReel);
-window.addEventListener('scroll', () => requestAnimationFrame(playReel), { passive: true });
-window.addEventListener('resize', playReel);
-setReel();
+notchShape.addEventListener('pointerenter', (event) => {
+    if (event.pointerType !== 'mouse') return;
+    clearTimeout(notchTimer);
+    notchTimer = setTimeout(() => openNotch(true), 80);
+});
+notchScreen.addEventListener('pointerleave', (event) => {
+    if (event.pointerType !== 'mouse') return;
+    clearTimeout(notchTimer);
+    notchTimer = setTimeout(() => openNotch(false), 350);
+});
+notchScreen.addEventListener('pointermove', (event) => {
+    const box = notchShape.getBoundingClientRect();
+    const near = event.clientY < box.bottom + 40
+        && event.clientX > box.left - 40 && event.clientX < box.right + 40;
+    notchScreen.classList.toggle('near', near);
+});
+notchScreen.addEventListener('pointerleave', () => notchScreen.classList.remove('near'));
+window.addEventListener('scroll', () => requestAnimationFrame(drawNotchMargin), { passive: true });
+window.addEventListener('resize', drawNotchMargin);
+drawNotchMargin();
 </script>
 </body>
 </html>
