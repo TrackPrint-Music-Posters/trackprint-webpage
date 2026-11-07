@@ -35,6 +35,17 @@ address answering until the builds that use it are gone.
   motion, or without JavaScript, it is a grid of all eight. The headlines, their
   lines and the features' colours are the app's welcome pages'
   (`TrackPrint/Welcome/WelcomePages.swift`): change one, change both.
+- After A5 the record turns over to side B, the players, which the welcome
+  tour doesn't have: B1 Now Playing (the eight iPhone players, a reel like
+  A3's), B2 Lock Screen (the Live Activity's card and the Dynamic Island),
+  B3 Mini Player (a drawn Mac desktop with the mini player at its size in
+  points, its size and style chosen under it) and B4 Notch (a drawn MacBook
+  screen top whose notch's margin fills as you scroll to it, then opens into
+  the player; resting the pointer on it or a tap opens it too). The top bar
+  turns with the reader: a Side A / Side B switch, and only that side's
+  tracks. Without JavaScript the bar stays on side A, the mini player shows
+  Medium in Classic and the notch stays closed. Name only what the shipping
+  app does.
 - `fonts/` holds Barlow Condensed (headlines) and JetBrains Mono (numbers and
   labels), Latin subsets as WOFF2 under the SIL Open Font License
   (`fonts/OFL.txt`). They are served from this site, so no font service sees a
@@ -63,6 +74,16 @@ address answering until the builds that use it are gone.
   (1063 × 1417 px). Redraw them when a style's look changes.
   `cover-golden-hour.webp` is the cover of the app's sample album, Golden
   Hour: the label of the hero's record and the cover in Adjust.
+- Side B's pictures are screenshots of the app playing the sample album
+  (debug builds' `-TrackPrintNowPlayingSample YES`), so no real album shows:
+  `player-<style>.webp` and `lock-classic.webp` from the iPhone simulator
+  (640 px wide), `island-classic.webp` the Dynamic Island held open, cut
+  out on a transparent ground, and from a Mac copy of the app under its own
+  bundle id `mini/<style>-<size>.webp` (each window at 2×, captured with
+  `screencapture -o -l <window>`, shown at its size in points) and
+  `notch-<style>.webp` (the notch player held open on a screen without a
+  notch, so its top corners are round; the page squares them off against
+  the screen's edge). Take them again when a player's look changes.
 - The icons (`icon-512.png`, `apple-touch-icon.png`) are the app icon,
   exported from `TrackPrint/AppIcon.icon` with Icon Composer's `ictool`
   (`--export-image` at 1024 px, macOS rendition for the icon, iOS for the
