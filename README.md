@@ -6,14 +6,18 @@ Static HTML, no build step.
 
 ## Published at
 
-GitHub Pages serves `main` from the repo root:
-<https://trackprint-music-posters.github.io/trackprint-webpage/>
+GitHub Pages serves `main` from the repo root at
+<https://trackprint.mateoarenas.dev/>, a subdomain of `mateoarenas.dev`: the
+`CNAME` file here names it, and a CNAME record at Porkbun, where the domain is
+registered, points it to `trackprint-music-posters.github.io`. The old address,
+`https://trackprint-music-posters.github.io/trackprint-webpage/`, redirects
+there page for page.
 
 | Page | Address | Used as |
 |---|---|---|
-| `index.html` | `…/trackprint-webpage/` | Marketing URL in App Store Connect |
-| `support.html` | `…/trackprint-webpage/support.html` | Support URL in App Store Connect, the app's Settings ▸ Support, and the MusicBrainz User-Agent contact |
-| `support.html#rights` | `…/trackprint-webpage/support.html#rights` | The app's Settings ▸ Report a Rights Issue |
+| `index.html` | `https://trackprint.mateoarenas.dev/` | Marketing URL in App Store Connect |
+| `support.html` | `…/support.html` | Support URL in App Store Connect, the app's Settings ▸ Support, and the MusicBrainz User-Agent contact |
+| `support.html#rights` | `…/support.html#rights` | The app's Settings ▸ Report a Rights Issue |
 
 The app names these addresses in one place, `TrackPrint/Legal/LegalLinks.swift`
 in the app repo, and `MusicBrainzAPI.contact` in its package. If a page is
@@ -57,9 +61,10 @@ address answering until the builds that use it are gone.
   [trackprint-feedback](https://github.com/TrackPrint-Music-Posters/trackprint-feedback),
   and the report becomes an issue in the app's private repo. It sends the
   version as `? via website`. The function only answers browsers from this
-  site's origin (`https://trackprint-music-posters.github.io`), so the form
-  fails from a local preview or if the site moves to another domain: add the
-  new origin to `ALLOWED_ORIGINS` in the function first.
+  site's origins (`https://trackprint.mateoarenas.dev`, and the old
+  `https://trackprint-music-posters.github.io`), so the form fails from a
+  local preview or if the site moves to another domain: add the new origin to
+  `ALLOWED_ORIGINS` in the function first.
 - The For rights holders section on `support.html` says what we can do about
   a rights notice and what to send us. The app opens it as
   `support.html#rights` from Settings ▸ Report a Rights Issue, so keep the
